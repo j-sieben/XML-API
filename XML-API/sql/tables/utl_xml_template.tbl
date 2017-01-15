@@ -1,0 +1,13 @@
+create table utl_xml_template(
+  uxt_id number, 
+	uxt_uxd_id number, 
+	uxt_root_element varchar2(30 char), 
+	uxt_xml_template xmltype, 
+	constraint pk_utl_xml_template primary key (uxt_id) enable
+) organization index;
+
+comment on table utl_xml_template is 'Tabelle zur Speicherung von XML-Template-instanzen, die auf einem XSD basieren';
+comment on column utl_xml_template.uxt_id is 'Technischer Schlüssel, PK';
+comment on column utl_xml_template.uxt_uxd_id is 'Referenz auf UTL_XML_DATA, referenziertes XSD';
+comment on column utl_xml_template.uxt_root_element is 'Name des Wurzelelements';
+comment on column utl_xml_template.uxt_xml_template is 'XML-Instanz aller Elemente, die laut XSD für dieses Wurzelelement verwendet werden dürfen';

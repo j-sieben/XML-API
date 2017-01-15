@@ -1,0 +1,15 @@
+create table utl_xml_data(
+  uxd_id number, 
+	uxd_description varchar2(200 char), 
+	uxd_file_name varchar2(50 char), 
+	uxd_content xmltype, 
+	uxd_version number default 1, 
+  constraint pk_utl_xml_data primary key (uxd_id) enable
+) organization index;
+
+comment on table utl_xml_data is 'Tabelle zur Speicherung von XML-Daten für UTL_XML. Wird verwendet zur Speicherung von Stammdatentabellen (XSL, XSD etc.)';
+comment on column utl_xml_data.uxd_id is 'Technischer Schlüssel, PK';
+comment on column utl_xml_data.uxd_id is 'Beschreibung der Datei';
+comment on column utl_xml_data.uxd_id is 'Dateiname, dient der Referenzierung';
+comment on column utl_xml_data.uxd_id is 'Inhalt der Datei, XMLTYPE';
+comment on column utl_xml_data.uxd_id is 'Versionsstring, dient der Unterscheidung unterschiedlicher XSLT oder XSD-Instanzen';

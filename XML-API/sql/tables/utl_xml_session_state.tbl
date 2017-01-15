@@ -1,0 +1,11 @@
+create table utl_xml_session_state(
+  uxs_session_id number, 
+	uxs_root_element varchar2(30 char), 
+	uxs_xml_content xmltype, 
+  constraint pk_utl_xml_session_state primary key (uxs_session_id) enable
+) organization index;
+
+comment on table utl_xml_session_state is 'Tabelle zur Speicherung von XML-Instanzdateien, die von einer APEX-Session über die API bearbeitet werden';
+comment on column utl_xml_session_state.uxs_session_id is 'Session-ID aus APEX, PK';
+comment on column utl_xml_session_state.uxs_root_element is 'Name des Wurzelelements der XML-Instanz, PK';
+comment on column utl_xml_session_state.uxs_xml_content is 'XML-Instanz, die durch die API bearbeitet wird';
