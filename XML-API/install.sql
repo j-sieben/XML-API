@@ -17,6 +17,9 @@ prompt &h3.Setting compile flags
 prompt &h3.CREATE SEQUENCES
 
 
+prompt &h3.CREATE MESSAGES
+@create_messages.sql
+
 prompt &h3.CREATE TABLES
 
 
@@ -29,6 +32,14 @@ prompt &s1.Create view SCT_UI_ACTION_TYPE
 prompt &h3.Create packages
 prompt &s1.Create package UTL_XML_CONST
 @&plsql_dir.utl_xml_const.pks
+show errors
+
+prompt &s1.Create package CODE_GENERATOR
+@&plsql_dir.code_generator.pks
+show errors
+
+prompt &s1.Create package Body CODE_GENERATOR
+@&plsql_dir.code_generator.pkb
 show errors
 
 prompt &s1.Create package UTL_XML_ADMIN
